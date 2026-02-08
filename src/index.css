@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom slider styles */
+.custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+   background: linear-gradient(
+    to right,
+    hsl(174, 77%, 80%) 0%,
+    hsl(174, 77%, 80%) var(--slider-progress),
+    hsl(224, 65%, 95%) var(--slider-progress),
+    hsl(224, 65%, 95%) 100%
+  );
+  border-radius: 5px;
+  outline: none;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  background-position: center center;
+  background-image: url('/src/assets/images/icon-slider.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  box-shadow: 0 15px 25px hsl(174, 86%, 45%); /* Shadow with same color */
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(174, 86%, 45%); /* Added */
+  border-radius: 50%; /* Added */
+  background-position: center center; /* Added */
+  background-image: url('/src/assets/images/icon-slider.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
