@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import patternCircles from './assets/images/pattern-circles.svg'
-
+import iconCheck from './assets/images/icon-check.svg'
 function App() {
   const [sliderValue, setSliderValue] = useState(2) // 0-4 index for the 5 tiers
   const [isYearly, setIsYearly] = useState(false)
@@ -17,9 +17,9 @@ function App() {
   const currentTier = pricingTiers[sliderValue]
   const finalPrice = isYearly ? currentTier.price * 0.75 : currentTier.price
   return (
-    <div>
+    <div className="font-Manrope">
       {/* Top section - pale blue background */}
-      <div className="bg-very-pale-blue pt-20 h-[50vh]">
+      <div className="bg-light-grayish-blue pt-20 h-[50vh]">
         <div className="relative">
           {/* Background image */}
           <img 
@@ -30,10 +30,10 @@ function App() {
           
           {/* Content on top */}
           <div className="relative z-10">
-            <h1 className="text-xl font-bold text-center">
+            <h1 className="text-xl font-bold text-center text-dark-desaturated-blue">
               Simple, traffic-based pricing
             </h1>
-            <p className="text-center max-w-[220px] mx-auto">
+            <p className="text-center max-w-[220px] mx-auto text-grayish-blue font-medium">
               Sign-up for our 30-day trial. No credit card required
             </p>
           </div>
@@ -41,8 +41,8 @@ function App() {
       </div>
 
       {/* Bottom section - white background */}
-      <div className="bg-pricing-card -mt-6 max-w-[90vw] mx-auto rounded-lg shadow-lg">
-      <p className='text-center pt-5'>{currentTier.pageviews} PAGEVIEWS</p>
+      <div className="bg-pricing-card -mt-6 max-w-[90vw] mx-auto rounded-lg pb-5">
+      <p className='text-center pt-5 text-grayish-blue font-semibold'>{currentTier.pageviews} PAGEVIEWS</p>
        <input 
           type="range" 
           min="0" 
@@ -56,21 +56,49 @@ function App() {
         />
          <div className="text-center my-6">
           <span className="text-4xl font-bold">${finalPrice.toFixed(2)}</span>
-          <span className="text-gray-500"> / month</span>
+          <span className="text-grayish-blue"> / month</span>
         </div>
               {/* Toggle for yearly billing */}
-        <div className="flex items-center justify-center gap-3">
-          <span className='text-xs'>Monthly Billing</span>
+        <div className="flex items-center justify-center gap-3 font-medium">
+          <span className='text-xs text-grayish-blue'>Monthly Billing</span>
           <button 
             onClick={() => setIsYearly(!isYearly)}
-            className={`w-10 h-4 rounded-full ${isYearly ? 'bg-soft-cyan' : 'bg-gray-300'}`}
+            className={`w-10 h-4 rounded-full ${isYearly ? 'bg-soft-cyan' : 'bg-light-grayish-blue'} relative transition-colors`}
           >
             <div className={`w-3 h-3 bg-white rounded-full transition-transform ${isYearly ? 'translate-x-6' : 'translate-x-1'}`}></div>
           </button>
-          <span className='text-xs'>Yearly Billing</span>
+          <span className='text-xs text-grayish-blue'>Yearly Billing</span>
           <span className="bg-red-background text-xs text-red-dis px-2 rounded">-25%</span>
         </div>
       </div>
+<hr className="w-[90vw] mx-auto border-light-grayish-blue" />
+<div className='bg-pricing-card max-w-[90vw] mx-auto rounded-lg shadow-lg pb-5 mb-20'>
+  <div className='pt-4 flex flex-col gap-3 font-semibold'>
+<p className='text-center text-grayish-blue text-sm'>  <img 
+            src={iconCheck} 
+            alt="" 
+            className="inline-block mr-2"
+          />Unlimited websites</p>
+<p className='text-center text-grayish-blue text-sm'> <img 
+            src={iconCheck} 
+            alt="" 
+            className="inline-block mr-2"
+          />100% data ownership</p>
+<p className='text-center text-grayish-blue text-sm'> <img 
+            src={iconCheck} 
+            alt="" 
+            className="inline-block mr-2"
+          />Email reports</p>
+          </div>
+          <div className='text-center py-4'><a 
+  href="#" 
+   onClick={(e) => e.preventDefault()}
+  className="bg-dark-desaturated-blue text-light-grayish-blue px-8 py-2 rounded-full font-semibold inline-block text-center mt-3"
+>
+  Start my trial
+</a>
+</div>
+</div>
     </div>
   )
 }
