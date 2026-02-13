@@ -32,7 +32,9 @@
   cursor: pointer;
   box-shadow: 0 15px 25px hsl(174, 86%, 45%); /* Shadow with same color */
 }
-
+.custom-slider::-webkit-slider-thumb:hover {
+   background-color:hsl(174, 86%, 25%);;
+}
 .custom-slider::-moz-range-thumb {
   width: 40px;
   height: 40px;
@@ -44,4 +46,7 @@
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+}
+.custom-slider::-moz-range-thumb:hover {
+   background-color:hsl(174, 86%, 25%);
 }
