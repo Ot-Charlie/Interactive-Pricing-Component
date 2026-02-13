@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://github.com/Ot-Charlie/Interactive-Pricing-Component)
 - Live Site URL: [Live site URL](https://ot-charlie.github.io/Interactive-Pricing-Component/)
 
 ## My process
